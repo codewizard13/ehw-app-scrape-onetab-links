@@ -3,7 +3,7 @@ Program Name:   Console: Filter Scraped OneTab links
 File Name:      ehCode_2018.09.26_javascript_filterScrapedOneTabLinks_01 (textSearch).js
 Date Created:   11/28/17
 Date Modified:  --
-Version:        2.0
+Version:        0.2.1
 Programmer:     Eric Hepperle
 
 Purpose: Lets user search for a particular string in a scraped

@@ -1,0 +1,108 @@
+#  Challenge Name: Underdog Devs: Cohort 4 Admission
+# Main Prj File:  controller.php
+# 
+# This Filename:  .gitignore
+# Date Created:   01/19/22
+# Date Updated:   01/12/23
+# Programmer:     Eric L. Hepperle
+# 
+# File Version:    1.00.00
+# 
+# File Purpose:
+#   This is the .gitignore file I created for myself based largely
+#   on the global .gitignore file from my job as a Jr. Software Developer
+#   at Hewlett-Packard in Vancouver, WA in 2013. You may use this
+#   .gitignore file freely at your own risk.
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+# Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Images & Binaries #
+#####################
+#*.jpg
+#*.gif
+#*.png
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Compressed #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Modules & Packages #
+######################
+node_modules/
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/log/*.log*
+/tmp/*
+/.vagrant
+/spec/reports
+/coverage
+/*.sublime-*
+/*~
+
+# Ignore .project file from Aptana
+/.project
+
+# MAC
+.DS_Store
+
+# HP Savings Center-Printables group
+.gemrc
+chef/
+public/assets/
+
+# Eric's ignores (11/29/21)
+.git/
+#pix/
+#_pix/
+#images/
+#_images/
+private/
+
+# Ignore Sandbox folders
+sb/
+sandbox/
+
+# TEMPORARILY:
+#Readme.md
+#docs/
+
+# ignore screenshots
+# screens/
+token.json
+*credential*

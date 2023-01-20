@@ -29,7 +29,8 @@ Parse links and information from OneTab. Displays categories in console. Uses va
 
 ## Usage
 
-To save/archive the links results use code inspector in browser to grab the "body" tag and contents, then paste that into a new document and save it.
+1. Open OneTab page in a browser and copy-paste the code in `scraper.js` into the console and run it (press Enter).
+2. To save/archive the links results use code inspector in browser to grab the "body" tag and contents, then paste that into a new document and save it.
 
 ## Requires
 
@@ -39,7 +40,6 @@ To save/archive the links results use code inspector in browser to grab the "bod
 
 * This README is in-progress and under construction.
 * Can't	inject jQuery anymore due to "Content Security Policy", so this version use vanilla JavaScript ES6.
-* 
 
 ## FUTURE
 
@@ -48,6 +48,8 @@ Future plans include:
 - [ ] Make searchable via JavaScript `match()` or `RegExp()`
 - [ ] Consider pros/cons of async/await
 - [ ] Write results to .htm file and auto execute in new browser tab
+- [ ] Save file as CSV
+- [ ] Make remote (Puppeteer? Cheerio?) so copy-paste not required
     
 ### Materials/References
 
@@ -59,26 +61,4 @@ Future plans include:
 #### Local Files:
 
 - ehCode_2016.05.25_javascript_csvFromAllLinksOnPage_02.js.txt
-- 
-
-
-Program Name:   Console: Scrape OneTab Links
-File Name:      ehCode_2018.03.05_JavaScriptES6_ScrapeOneTabLinks_01.js
-Date Created:   02/27/18
-Date Modified:  04/01/18
-Version:        1.02
-Programmer:     Eric Hepperle
-
-Purpose:  
-	
-	NOTE: 
-
-Usage: Open OneTab page in a browser and copy-paste the code below
-	into the console.
-
-		
-	
-    Sample results: N/A	
-
-Requires: 
-	* Browser console
+- [ref/](./ref/)

@@ -27,6 +27,8 @@
 
 Parse links and information from OneTab. Displays categories in console. Uses vanilla JavaScript ES6.
 
+![OneTab logo](img/logoPic-onetab.png)
+
 ## Usage
 
 1. Open OneTab page in a browser and copy-paste the code in `scraper.js` into the console and run it (press Enter).

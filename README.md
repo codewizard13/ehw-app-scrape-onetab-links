@@ -20,29 +20,46 @@
 <br>
 
 ## TAGS
-`JavaScript` `ES6` `Web Scraping` `OneTab` `Bookmarks` `DOM Navigation` `Parse local file`
+
+`JavaScript` `ES6` `Web Scraping` `OneTab` `Bookmarks` `DOM Navigation` `Parse local file` `Hyperlinks` `Anchor Tags`
 
 ## Purpose
 
-Scrape blog (local .html/htm file) post data to JSON object
-    
-## NOTES
-### About the demo folder
-One might expect the `demo/` folder to hold a working demonstration of the app. Nope. This folder holds individual applications of concepts I learned while building this project. Basically, these are all standlone MVPs and the ones that start with "basic" pretty much handle one concept each.
+Parse links and information from OneTab. Displays categories in console. Uses vanilla JavaScript ES6.
 
-- basic--get-screenshot.js
-- basic--write-array-to-file.js
-- basic--write-dom-nodelist-to-file.js
-- get-links-and-image-urls.js
-- get-page-save-html-to-file.js
+## Usage
+
+To save/archive the links results use code inspector in browser to grab the "body" tag and contents, then paste that into a new document and save it.
 
 ## Requires
+
 * Browser opened to a YouTube video with developer console exposed.
+
+## NOTES & CAVEATS
+
+* This README is in-progress and under construction.
+* Can't	inject jQuery anymore due to "Content Security Policy", so this version use vanilla JavaScript ES6.
+* 
+
+## FUTURE
+
+Future plans include:
+
+- [ ] Make searchable via JavaScript `match()` or `RegExp()`
+- [ ] Consider pros/cons of async/await
+- [ ] Write results to .htm file and auto execute in new browser tab
     
 ### Materials/References
 
+#### Online:
+
 - https://www.youtube.com/watch?v=lgyszZhAZOI
 - https://www.youtube.com/watch?v=S67gyqnYHmI
+
+#### Local Files:
+
+- ehCode_2016.05.25_javascript_csvFromAllLinksOnPage_02.js.txt
+- 
 
 
 Program Name:   Console: Scrape OneTab Links
@@ -52,18 +69,14 @@ Date Modified:  04/01/18
 Version:        1.02
 Programmer:     Eric Hepperle
 
-Purpose: Parses links and information from OneTab.
-	Displays categories in console. Uses vanilla JavaScript ES6. 
+Purpose:  
 	
-	NOTE: Can't	inject jQuery anymore due to "Content Security Policy",
-	 so this version use vanilla JavaScript ES6.
+	NOTE: 
 
 Usage: Open OneTab page in a browser and copy-paste the code below
 	into the console.
 
-	To save/archive the links results use code inspector in browser to
-    grab the "body" tag and contents, then paste that into a new document
-    and save it.	
+		
 	
     Sample results: N/A	
 

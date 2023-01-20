@@ -38,7 +38,7 @@ Parse links and information from OneTab. Displays categories in console. Uses va
 
 ## NOTES & CAVEATS
 
-* This README is in-progress and under construction.
+* _**_This README is in-progress and under construction._**_
 * Can't	inject jQuery anymore due to "Content Security Policy", so this version use vanilla JavaScript ES6.
 
 ## FUTURE

@@ -1,30 +1,39 @@
 /*
-Program Name:   Console: Filter Scraped OneTab links
-File Name:      ehCode_2018.09.26_javascript_filterScrapedOneTabLinks_01 (textSearch).js
-Date Created:   11/28/17
+Program Name:   App: Scrape OneTab Links
+File Name:      scraper.js
+Date Created:   05/18/23
 Date Modified:  --
-Version:        0.2.1
+Version:        1.00.00
 Programmer:     Eric Hepperle
 
-Purpose: Lets user search for a particular string in a scraped
-	OneTab link list html page using vanilla ES6 JavaScript.
-	
-Usage: Open scraped OneTab bookmarks page in a browser and copy-paste the
-    code below into the console.
+PURPOSE: 
 
-	To save/archive the links results use code inspector in browser to
-    grab the "body" tag and contents, then paste that into a new document
-    and save it.	
+Parse links and information from OneTab. Displays categories in console. Uses vanilla JavaScript ES6.
 	
-Sample results: 
+USAGE: 
+
+1) Open OneTab page in a browser and copy-paste the code in scraper.js into the console and run it (press Enter).
+2) To save/archive the links results use code inspector in browser to grab the "body" tag and contents, then paste that into a new document and save it.
+	
+SAMPLE RESULTS: 
     N/A
 
-Requires: 
-	* Browser console
-	* A scrape OneTab links list page created with 
-		ehCode_2017.11.27_javascript_scrapeLinksFromOneTab_02 (from Algorithm)
+REQUIRES:
+
+- Browser opened to a YouTube video with developer console exposed.
+
+FUTURE:
+
+- Make searchable via JavaScript match() or RegExp()
+- Consider pros/cons of async/await
+- Write results to .htm file and auto execute in new browser tab
+- Save file as CSV
+- Make remote (Puppeteer? Cheerio?) so copy-paste not required
+
 
 */
+
+
 
 /* global $ */
 /*jshint esversion: 6 */

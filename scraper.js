@@ -86,19 +86,8 @@ const link_parts = []
  */
 function main() {
 
-  for (i=0; i<testSet.length; i++) {
-
-    let line = testSet[i]
-
-    let lineParts = line.split("|")
-    let url = lineParts[0]
-    let title = lineParts[1]
-
-    console.log(`${i}: ${title}`)
-    console.log(`    [${url}]\n`)
-
-  }
-
+  let results = parseLineSet(testSet)
+  console.log(results)
 
 
 
@@ -114,5 +103,31 @@ RESULTS:
 
 1:  (223) Intro To Web Scraping With Puppeteer - YouTube
     [https://www.youtube.com/watch?v=S67gyqnYHmI ]
-    
+
 */
+
+
+///// HELPER FUNCTIONS //////
+
+
+function parseLineSet(lineSet) {
+
+  let outStr = ''
+
+  for (i=0; i<testSet.length; i++) {
+
+    let line = testSet[i]
+
+    let lineParts = line.split("|")
+    let url = lineParts[0]
+    let title = lineParts[1]
+
+    outStr += `
+    ${i}: ${title}
+        [${url}]\n`
+
+  }
+
+  return outStr
+
+}

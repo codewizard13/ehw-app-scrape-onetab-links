@@ -71,7 +71,6 @@ RETURN urlsByDomainDict
 
 const testSet = [
   "https://github.com/codewizard13 | codewizard13 (Eric L. Hepperle)",
-  "https://www.youtube.com/watch?v=lgyszZhAZOI | (223) Web Scraping with Puppeteer & Node.js: Chrome Automation - YouTube",
   "https://www.youtube.com/watch?v=S67gyqnYHmI | (223) Intro To Web Scraping With Puppeteer - YouTube",
 ]
 
@@ -95,7 +94,8 @@ function main() {
     let url = lineParts[0]
     let title = lineParts[1]
 
-    console.log(`${i}:\t${title}`)
+    console.log(`${i}: ${title}`)
+    console.log(`    [${url}]\n`)
 
   }
 
@@ -104,3 +104,15 @@ function main() {
 
 }
 main()
+
+
+/*
+RESULTS:
+
+0:  codewizard13 (Eric L. Hepperle)
+    [https://github.com/codewizard13 ]
+
+1:  (223) Intro To Web Scraping With Puppeteer - YouTube
+    [https://www.youtube.com/watch?v=S67gyqnYHmI ]
+    
+*/

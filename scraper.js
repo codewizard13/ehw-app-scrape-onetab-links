@@ -67,4 +67,23 @@ RETURN urlsByDomainDict
 */
 
 
-*/
+const testSet = [
+  "https://github.com/codewizard13 | codewizard13 (Eric L. Hepperle)",
+  "https://www.youtube.com/watch?v=lgyszZhAZOI | (223) Web Scraping with Puppeteer & Node.js: Chrome Automation - YouTube",
+  "https://www.youtube.com/watch?v=S67gyqnYHmI | (223) Intro To Web Scraping With Puppeteer - YouTube",
+]
+
+
+const domainsDict = {}
+
+const sel_group = ''
+const sel_link = ''
+const link_parts = []
+
+/**
+ * MAIN
+ */
+function main() {
+  console.table(testSet)
+}
+main()

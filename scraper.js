@@ -77,7 +77,7 @@ const testSet = [
 
 const domainsDict = {}
 
-const sel_group = ''
+const sel_group = '.tabGroup'
 const sel_link = ''
 const link_parts = []
 

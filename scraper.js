@@ -46,11 +46,13 @@ DEFINE results array
 /*
 ALGORITHM
 
-DEFINE GLOBAL hashmap (urlsByDomainDict)
+DEFINE GLOBAL hashmap (domainsDict)
 
 DEFINE group selector variable
 
 DEFINE group link selector variable
+
+SCRAPE all groups into array
 
 LOOP through all groups
 
@@ -84,6 +86,21 @@ const link_parts = []
  * MAIN
  */
 function main() {
-  console.table(testSet)
+
+  for (i=0; i<testSet.length; i++) {
+
+    let line = testSet[i]
+
+    let lineParts = line.split("|")
+    let url = lineParts[0]
+    let title = lineParts[1]
+
+    console.log(`${i}:\t${title}`)
+
+  }
+
+
+
+
 }
 main()

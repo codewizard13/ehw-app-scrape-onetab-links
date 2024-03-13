@@ -1,9 +1,9 @@
 /*
-Program Name:   Console: Scrape OneTab Links
-File Name:      ehCode_2018.04.01_JavaScriptES6_ScrapeOneTabLinks_01.js
+Program Name:   Console: Scrape OneTab Links and Output to New Tab
+File Name:      scraper.js
 Date Created:   02/27/18
-Date Modified:  04/01/18
-Version:        1.02
+Date Modified:  03/13/24
+Version:        00.01.05
 Programmer:     Eric Hepperle
 
 Purpose: Parses links and information from OneTab.
@@ -23,6 +23,8 @@ Usage: Open OneTab page in a browser and copy-paste the code below
 
 Requires: 
 	* Browser console
+
+ehCode_2018.04.01_JavaScriptES6_ScrapeOneTabLinks_01 (works).js
 
 */
 

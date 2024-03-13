@@ -24,7 +24,9 @@ Usage: Open OneTab page in a browser and copy-paste the code below
 Requires: 
 	* Browser console
 
-ehCode_2018.04.01_JavaScriptES6_ScrapeOneTabLinks_01 (works).js
+Based on: ehCode_2018.04.01_JavaScriptES6_ScrapeOneTabLinks_01 (works).js
+
+STATUS: #WORKS (03/13/2024)
 
 */
 

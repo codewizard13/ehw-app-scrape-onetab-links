@@ -74,7 +74,7 @@ console.clear();
 	
 	// =========== Selector Constants =======
 	// skips first 3 children
-	var selAllGroups = "#contentAreaDiv > div:nth-child(n+4):not(:nth-last-child(-n+1)";
+	var selAllGroups = ".tabGroup";
 	
 	var selGroupTitle = "div.tabGroupTitleText";
 	// =========== END Selector Constants ===

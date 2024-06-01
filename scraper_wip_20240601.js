@@ -2,12 +2,13 @@
 Program Name:   Console: Scrape OneTab Links and Output to New Tab
 File Name:      scraper.js
 Date Created:   03/13/24
-Date Modified:  
+Date Modified:  06/01/24
 Version:        00.01.06
 Programmer:     Eric Hepperle
 
-Purpose: Parses links and information from OneTab.
-	Displays categories in console. Uses vanilla JavaScript ES6. 
+Purpose: Parses links and information from OneTab. Scrape all links from
+	OneTab, group by domain name, and output to a JSON file. Displays
+	categories in console. Uses vanilla JavaScript ES6. 
 	
 Usage: Open OneTab page in a browser and copy-paste the code below
 	into the console.
@@ -16,8 +17,6 @@ Usage: Open OneTab page in a browser and copy-paste the code below
     grab the "body" tag and contents, then paste that into a new document
     and save it.	
 	
-    Sample results: N/A	
-
 Requires: 
 	* Browser console
 

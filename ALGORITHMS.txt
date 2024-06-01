@@ -2,4 +2,12 @@
 
 Purpose: Scrape all links from OneTab, group by domain name, and output to a JSON file
 
-GET ALL link_rows with 
+GET ALL link_rows with document.querySelectorAll()
+
+LOOP through each link_row
+
+  PARSE the current HREF to find the domain
+
+  ADD domain as key in URLS dict
+
+END LOOP

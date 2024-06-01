@@ -29,9 +29,12 @@ STATUS: #WORKS (03/13/2024)
 
 console.clear();
 
+
+
 ////////////////   GLOBAL VARIABLES   ////////////////
 	
 	// =========== Output Variables =========
+
 	// Groups array to store all group info (this is the root)
 	var objArrGroups = [];
 	
@@ -41,6 +44,7 @@ console.clear();
 
 	
 	// =========== Row Variables ============
+
 	// Row Link
 	var rowLink = '';
 	
@@ -56,6 +60,7 @@ console.clear();
 		
 
 	// =========== Counters =================
+
 	// Blank Title Count
 	var blankTitleCount = 1;
 
@@ -71,6 +76,7 @@ console.clear();
 
 	
 	// =========== Selector Constants =======
+	
 	// skips first 3 children
 	var selAllGroups = ".tabGroup";
 	
@@ -85,7 +91,8 @@ console.clear();
 	var ltgrn = "background:lightgreen";
 	// =========== END CSS Style Constants ==
 
-// ********************** HELPER FUNCTIONS
+
+////////////////   HELPER FUNCTIONS   ////////////////
 
 /*
 pad()
@@ -104,7 +111,10 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }	
 
-// ********************** MAIN
+
+
+////////////////   MAIN   ////////////////
+
 		
 // Get All Group And Row Info And Store In Array Of Objects:
 function getAllGroups() {

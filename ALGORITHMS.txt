@@ -11,3 +11,29 @@ LOOP through each link_row
   ADD domain as key in URLS dict
 
 END LOOP
+
+
+/*
+ALGORITHM
+
+DEFINE GLOBAL hashmap (domainsDict)
+
+DEFINE group selector variable
+
+DEFINE group link selector variable
+
+SCRAPE all groups into array
+
+LOOP through all groups
+
+  LOOP through group links in current group
+
+    STORE group link parts (url, title, icon_url)
+
+  END
+
+END
+
+RETURN urlsByDomainDict
+
+*/

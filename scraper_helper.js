@@ -1,7 +1,7 @@
-const testSet = [
-  "https://github.com/codewizard13 | codewizard13 (Eric L. Hepperle)",
-  "https://www.youtube.com/watch?v=S67gyqnYHmI | (223) Intro To Web Scraping With Puppeteer - YouTube",
-]
+// const testSet = [
+//   "https://github.com/codewizard13 | codewizard13 (Eric L. Hepperle)",
+//   "https://www.youtube.com/watch?v=S67gyqnYHmI | (223) Intro To Web Scraping With Puppeteer - YouTube",
+// ]
 
 
 const domainsDict = {}
@@ -9,13 +9,19 @@ const domainsDict = {}
 const sel_group = '.tabGroup'
 const sel_link = ''
 const link_parts = []
+const sel__link_rows = '.tab > div:nth-child(2)'
+
+const iconGridURL = '/img/iconGrid.webp'
 
 /**
  * MAIN
  */
 function main() {
 
-  let results = parseLinkRows(testSet)
+	let linkRows = document.querySelectorAll(sel__link_rows)
+	// let linkRows = testSet
+
+  let results = parseLinkRows(linkRows)
   console.log(results)
 
 
@@ -43,20 +49,45 @@ function parseLinkRows(linkRows) {
 
   let outStr = ''
 
-  for (i=0; i<testSet.length; i++) {
+  for (i=0; i<linkRows.length; i++) {
 
-    let line = testSet[i]
+    let row = linkRows[i]
+		// console.log(row)
 
-    let lineParts = line.split("|")
-    let url = lineParts[0]
-    let title = lineParts[1]
+		let icon_el = row.querySelector('div:first-child')
+		// console.log(`icon_el: `, icon_el)
 
-    outStr += `
-    ${i}: ${title}
-        [${url}]\n`
+		// If there's an IMG tag, use that. Otherwise use the sprite
+		if (row.querySelector('div:first-child img')) {
+			console.log(`/////////// YES THERE'S AN IMAGE! ////////////`)
+			let out_rowIcon = document.createElement("img")
+		console.log(`out_rowIcon: `, out_rowIcon)
+
+		} else {
+			// Use the sprite positioning styles
+			let out_rowIcon = document.createElement("img")
+			rowIcon_style = row.querySelector('div:first-child').style
+			out_rowIcon.style = rowIcon_style
+		// console.log(`rowIcon_style: `, rowIcon_style)
+		console.log(`out_rowIcon: `, out_rowIcon)
+
+		}
+
+		// console.log(`out_rowIcon: `, out_rowIcon)
+
+    // let rowParts = row.split("|")
+    // let url = rowParts[0]
+    // let title = rowParts[1]
+
+    outStr += `${linkRows}<br>`
+    // ${i}: ${title}
+    //     [${url}]\n`
 
   }
 
   return outStr
 
 }
+
+
+// #GOTCHA: OneTab uses a sprite for images

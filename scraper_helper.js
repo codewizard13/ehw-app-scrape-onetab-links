@@ -73,6 +73,14 @@ function parseLinkRows(linkRows) {
 	let bgPosition = ''
 
     for (let i = 0; i < linkRows.length; i++) {
+
+					// Reset variables
+				bgSize = ''
+				bgPosition = ''
+				hasSprite = false
+
+
+
         let row = linkRows[i];
 				let rowNum = i+1
 
@@ -144,9 +152,7 @@ if (hasSprite) {
 		</a>
 	</li>\n`
 
-	// Reset variables
-	bgSize = ''
-	bgPosition = ''
+
 
 } else {
 

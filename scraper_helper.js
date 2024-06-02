@@ -35,11 +35,25 @@ function main() {
 		console.log(`linkRows Total = ${linkRows.length}`)
 
     let resutls_obj = parseLinkRows(linkRows);
-    // console.log(resutls_obj.log_str);
+    console.log(resutls_obj.log_str);
+
+
+		// Define styles for result tab
+		let style_el = document.createElement("style")
+		let styles = `
+		.row-icon {
+			width: 16px;
+			height: 16px;
+		}
+		
+		`
+		style_el.textContent = styles
+
 
 		// Launch in a new tab
-		// var new_tab = window.open('','TARGET')
-		// new_tab.document.body.innerHTML = resutls_obj.html_str
+		var new_tab = window.open('','TARGET')
+		new_tab.document.body.innerHTML = resutls_obj.html_str
+		new_tab.document.head.appendChild(style_el)
 }
 main();
 
@@ -52,6 +66,8 @@ function parseLinkRows(linkRows) {
 	let outObj = {}
 	let log_str = ''
 	let html_str = ''
+	let hasSprite = false
+	let row_htm = ''
 
     for (let i = 0; i < linkRows.length; i++) {
         let row = linkRows[i];
@@ -80,6 +96,7 @@ function parseLinkRows(linkRows) {
         if (!iconImg && iconDiv.style.backgroundImage) {
             iconSrc = iconDiv.style.backgroundImage;
             if (iconSrc.includes('iconGrid.webp')) {
+								hasSprite = true
                 let bgSize = iconDiv.style.backgroundSize;
                 let bgPosition = iconDiv.style.backgroundPosition;
                 iconSrc += ` (Sprite Image: size=${bgSize}, position=${bgPosition})`;
@@ -95,32 +112,35 @@ function parseLinkRows(linkRows) {
         log_str += `Icon Source: ${iconSrc}\n`;
         log_str += '\n';
 
-				// BUILD DOM
+				// BUILD DOM ELEMENT
 
-let row_htm = 				
-`<li class="row">
-	[Row #: ${rowNum}]:
-	<img
-		alt="favicon for "
-		class="row-icon"
-		src="chrome-extension://chphlpgkkbolifaimnlloiipkdnihall/_favicon/?pageUrl=https%3A%2F%2Fchatgpt.com%2Fc%2Feb76d760-9f75-402d-b42b-d1ae9dcbdf3c&amp;size=32"
-		\="" />
-	<a
-		href="https://chatgpt.com/c/eb76d760-9f75-402d-b42b-d1ae9dcbdf3c"
-		target="_blank">
-		Admin Bar Custom Count
-	</a>
-</li>
-<li class="row">
-	[Row #: 002]:
-	<img alt="favicon for " class="row-icon" src="" \="" />
-	<a
-		href="https://www.reddit.com/r/ProWordPress/comments/1d1qnhv/is_there_anything_like_local_wordpress_that/"
-		target="_blank">
-		Is there anything like Local Wordpress that doesn't lock you into a
-		specific host (ie Worpress Engine)? : r/ProWordPress
-	</a>
-</li>\n`
+if (hasSprite) {
+
+	row_htm = 				
+	`<li class="row">
+		[Row #: ${rowNum}]:
+		<img alt="favicon for " class="row-icon has-sprite" src="${iconSrc}" \="" />
+		<a
+			href="${linkHref}"
+			target="_blank">
+			${linkText}
+		</a>
+	</li>\n`
+
+} else {
+
+	row_htm = 				
+	`<li class="row">
+		[Row #: ${rowNum}]:
+		<img alt="favicon for " class="row-icon" src="${iconSrc}" \="" />
+		<a
+			href="${linkHref}"
+			target="_blank">
+			${linkText}
+		</a>
+	</li>\n`
+	
+}
 
 			html_str += row_htm
 
@@ -137,3 +157,11 @@ let row_htm =
 
 
 // #GOTCHA: OneTab uses a sprite for images
+
+/*
+REFERENCES:
+
+- https://stackoverflow.com/questions/51328170/best-way-to-parse-url-in-es6
+
+
+*/

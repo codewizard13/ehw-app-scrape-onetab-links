@@ -15,8 +15,6 @@ SAMPLE RESULTS:
 
 const domainsDict = {}
 
-const sel__link_rows = '.tab > div:nth-child(2)'
-
 const iconGridURL = '/img/iconGrid.webp'
 
 

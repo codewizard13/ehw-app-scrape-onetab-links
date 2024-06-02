@@ -2,36 +2,8 @@
 //   "https://github.com/codewizard13 | codewizard13 (Eric L. Hepperle)",
 //   "https://www.youtube.com/watch?v=S67gyqnYHmI | (223) Intro To Web Scraping With Puppeteer - YouTube",
 // ]
-
-
-const domainsDict = {}
-
-const sel_group = '.tabGroup'
-const sel_link = ''
-const link_parts = []
-const sel__link_rows = '.tab > div:nth-child(2)'
-
-const iconGridURL = '/img/iconGrid.webp'
-
-/**
- * MAIN
- */
-function main() {
-
-	let linkRows = document.querySelectorAll(sel__link_rows)
-	// let linkRows = testSet
-
-  let results = parseLinkRows(linkRows)
-  console.log(results)
-
-
-
-}
-main()
-
-
 /*
-RESULTS:
+SAMPLE RESULTS:
 
 0:  codewizard13 (Eric L. Hepperle)
     [https://github.com/codewizard13 ]
@@ -41,53 +13,72 @@ RESULTS:
 
 */
 
+const domainsDict = {}
+
+const sel__link_rows = '.tab > div:nth-child(2)'
+
+const iconGridURL = '/img/iconGrid.webp'
+
+
+
+
 
 ///// HELPER FUNCTIONS //////
 
 
-function parseLinkRows(linkRows) {
+const sel__link_rows = '.tab > div:nth-child(2)';
 
-  let outStr = ''
-
-  for (i=0; i<linkRows.length; i++) {
-
-    let row = linkRows[i]
-		// console.log(row)
-
-		let icon_el = row.querySelector('div:first-child')
-		// console.log(`icon_el: `, icon_el)
-
-		// If there's an IMG tag, use that. Otherwise use the sprite
-		if (row.querySelector('div:first-child img')) {
-			console.log(`/////////// YES THERE'S AN IMAGE! ////////////`)
-			let out_rowIcon = document.createElement("img")
-		console.log(`out_rowIcon: `, out_rowIcon)
-
-		} else {
-			// Use the sprite positioning styles
-			let out_rowIcon = document.createElement("img")
-			rowIcon_style = row.querySelector('div:first-child').style
-			out_rowIcon.style = rowIcon_style
-		// console.log(`rowIcon_style: `, rowIcon_style)
-		console.log(`out_rowIcon: `, out_rowIcon)
-
-		}
-
-		// console.log(`out_rowIcon: `, out_rowIcon)
-
-    // let rowParts = row.split("|")
-    // let url = rowParts[0]
-    // let title = rowParts[1]
-
-    outStr += `${linkRows}<br>`
-    // ${i}: ${title}
-    //     [${url}]\n`
-
-  }
-
-  return outStr
-
+/**
+ * MAIN
+ */
+function main() {
+    let linkRows = document.querySelectorAll(sel__link_rows);
+    let results = parseLinkRows(linkRows);
+    console.log(results);
 }
+main();
+
+/**
+ * Helper Function: parseLinkRows
+ * Parses the link rows and extracts relevant data.
+ */
+function parseLinkRows(linkRows) {
+    let outStr = '';
+
+    for (let i = 0; i < linkRows.length; i++) {
+        let row = linkRows[i];
+
+        // Extracting the link
+        let linkElement = row.querySelector('a.tabLink');
+        let linkHref = linkElement ? linkElement.href : 'No link found';
+        let linkText = linkElement ? linkElement.textContent : 'No link text found';
+
+        // Check for an image within the first div element
+        let iconDiv = row.querySelector('div:first-child');
+        let iconImg = iconDiv.querySelector('img');
+        let iconSrc = iconImg ? iconImg.src : 'No image found';
+
+        // Check for sprite image if no direct image is found
+        if (!iconImg && iconDiv.style.backgroundImage) {
+            iconSrc = iconDiv.style.backgroundImage;
+            if (iconSrc.includes('iconGrid.webp')) {
+                let bgSize = iconDiv.style.backgroundSize;
+                let bgPosition = iconDiv.style.backgroundPosition;
+                iconSrc += ` (Sprite Image: size=${bgSize}, position=${bgPosition})`;
+            }
+        }
+
+        // Append extracted data to the output string
+        outStr += `Row ${i + 1}:\n`;
+        outStr += `Link Text: ${linkText}\n`;
+        outStr += `Link URL: ${linkHref}\n`;
+        outStr += `Icon Source: ${iconSrc}\n`;
+        outStr += '\n';
+    }
+
+    return outStr;
+}
+
 
 
 // #GOTCHA: OneTab uses a sprite for images

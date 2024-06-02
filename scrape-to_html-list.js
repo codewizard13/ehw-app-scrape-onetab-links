@@ -1,9 +1,9 @@
 /*
 Program Name:   Console: Scrape OneTab Links and Output to New Tab
 File Name:      scraper.js
-Date Created:   03/13/24
+Date Created:   06/01/24
 Date Modified:  06/02/24
-Version:        00.01.06
+Version:        01.00.00
 Programmer:     Eric Hepperle
 
 Purpose: Parses links and information from OneTab. Scrape all links from
@@ -20,7 +20,21 @@ Usage: Open OneTab page in a browser and copy-paste the code below
 Requires: 
 	* Browser console
 
-STATUS: #WORKS (03/13/2024)
+
+/////////   STATUS: #WORKS (06/02/2024) /////////
+
+- Successfully parsing domain name, but not doing anything with it yet
+- Outputs a URL list including the link, link text, and correct icon
+- Accounts for whether icon is served by local sprite or img src
+
+FUTURE:
+
+- Group by domain name
+- Make searchable via JavaScript match() or RegExp()
+- Consider pros/cons of async/await
+- Write results to .htm file and auto execute in new browser tab
+- Save file as CSV
+- Make remote (Puppeteer? Cheerio?) so copy-paste not required
 
 */
 
@@ -36,6 +50,8 @@ const domainsDict = {}
 
 const iconGridURL = '/img/iconGrid.webp'
 
+const sel__link_rows = '.tab > div:nth-child(2)';
+
 
 
 
@@ -43,7 +59,6 @@ const iconGridURL = '/img/iconGrid.webp'
 ///// HELPER FUNCTIONS //////
 
 
-const sel__link_rows = '.tab > div:nth-child(2)';
 
 /**
  * MAIN

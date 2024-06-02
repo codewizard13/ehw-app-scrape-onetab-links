@@ -69,6 +69,9 @@ function parseLinkRows(linkRows) {
 	let hasSprite = false
 	let row_htm = ''
 
+	let bgSize = ''
+	let bgPosition = ''
+
     for (let i = 0; i < linkRows.length; i++) {
         let row = linkRows[i];
 				let rowNum = i+1
@@ -97,8 +100,8 @@ function parseLinkRows(linkRows) {
             iconSrc = iconDiv.style.backgroundImage;
             if (iconSrc.includes('iconGrid.webp')) {
 								hasSprite = true
-                let bgSize = iconDiv.style.backgroundSize;
-                let bgPosition = iconDiv.style.backgroundPosition;
+                bgSize = iconDiv.style.backgroundSize
+                bgPosition = iconDiv.style.backgroundPosition
                 iconSrc += ` (Sprite Image: size=${bgSize}, position=${bgPosition})`;
             }
         }
@@ -116,10 +119,24 @@ function parseLinkRows(linkRows) {
 
 if (hasSprite) {
 
+	console.log(`bgSize: ${bgSize}`)
+
 	row_htm = 				
 	`<li class="row">
 		[Row #: ${rowNum}]:
-		<img alt="favicon for " class="row-icon has-sprite" src="${iconSrc}" \="" />
+		<img alt="favicon" class="row-icon has-sprite" src=""
+		style="
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			top: 5px;
+			position: absolute;
+			left: 25px;
+			cursor: move;
+			background-size: ${bgSize};
+			background-position: ${bgPosition};
+			background-image: url('images/iconGrid.webp');		
+		" \="" />
 		<a
 			href="${linkHref}"
 			target="_blank">
@@ -127,12 +144,16 @@ if (hasSprite) {
 		</a>
 	</li>\n`
 
+	// Reset variables
+	bgSize = ''
+	bgPosition = ''
+
 } else {
 
 	row_htm = 				
 	`<li class="row">
 		[Row #: ${rowNum}]:
-		<img alt="favicon for " class="row-icon" src="${iconSrc}" \="" />
+		<img alt="favicon" class="row-icon" src="${iconSrc}" \="" />
 		<a
 			href="${linkHref}"
 			target="_blank">

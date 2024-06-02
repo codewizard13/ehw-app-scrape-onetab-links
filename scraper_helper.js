@@ -124,19 +124,19 @@ if (hasSprite) {
 	row_htm = 				
 	`<li class="row">
 		[Row #: ${rowNum}]:
-		<img alt="favicon" class="row-icon has-sprite" src=""
+		<div alt="favicon" class="row-icon has-sprite" src=""
 		style="
-			display: inline-block;
-			width: 16px;
-			height: 16px;
-			top: 5px;
-			position: absolute;
-			left: 25px;
-			cursor: move;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		top: 5px;
+		left: 25px;
+		cursor: move;
+
 			background-size: ${bgSize};
 			background-position: ${bgPosition};
 			background-image: url('images/iconGrid.webp');		
-		" \="" />
+		" \="" /></div>
 		<a
 			href="${linkHref}"
 			target="_blank">
